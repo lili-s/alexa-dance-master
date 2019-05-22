@@ -1,16 +1,16 @@
-docker build -t stephengrider/multi-client:latest -t stephengrider/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t stephengrider/multi-server:latest -t stephengrider/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t stephengrider/multi-worker:latest -t stephengrider/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build -t lilisun/dance-master-client:latest -t lilisun/dance-master-client:$SHA -f ./client/Dockerfile ./client
+docker build -t lilisun/dance-master-server:latest -t lilisun/dance-master-server:$SHA -f ./server/Dockerfile ./server
+docker build -t lilisun/dance-master-worker:latest -t lilisun/dance-master-worker:$SHA -f ./worker/Dockerfile ./worker
 
-docker push stephengrider/multi-client:latest
-docker push stephengrider/multi-server:latest
-docker push stephengrider/multi-worker:latest
+docker push lilisun/dance-master-client:latest
+docker push lilisun/dance-master-server:latest
+docker push lilisun/dance-master-worker:latest
 
-docker push stephengrider/multi-client:$SHA
-docker push stephengrider/multi-server:$SHA
-docker push stephengrider/multi-worker:$SHA
+docker push lilisun/dance-master-client:$SHA
+docker push lilisun/dance-master-server:$SHA
+docker push lilisun/dance-master-worker:$SHA
 
 kubectl apply -f k8s
-kubectl set image deployments/server-deployment server=stephengrider/multi-server:$SHA
-kubectl set image deployments/client-deployment client=stephengrider/multi-client:$SHA
-kubectl set image deployments/worker-deployment worker=stephengrider/multi-worker:$SHA
+kubectl set image deployments/server-deployment server=lilisun/dance-master-server:$SHA
+kubectl set image deployments/client-deployment client=lilisun/dance-master-client:$SHA
+kubectl set image deployments/worker-deployment worker=lilisun/dance-master-worker:$SHA
