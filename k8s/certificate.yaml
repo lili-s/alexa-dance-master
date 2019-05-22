@@ -3,18 +3,18 @@ kind: Certificate
 metadata:
   name: k8s-multi-com-tls
 spec:
-  secretName: k8s-multi-com
+  secretName: dancers-town-org
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: k8s-multi.com
+  commonName: dancerstown.org
   dnsNames:
-    - k8s-multi.com
-    - www.k8s-multi.com
+    - dancerstown.org
+    - www.dancerstown.org
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - k8s-multi.com
-          - www.k8s-multi.com
+          - dancerstown.org
+          - www.dancerstown.org
