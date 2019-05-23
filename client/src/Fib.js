@@ -57,14 +57,18 @@ class Fib extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Enter dancer's number:</label>
-         
+          <input
+            value={this.state.index}
+            onChange={event => this.setState({ index: event.target.value })}
+          />
+          <button>Submit</button>
         </form>
 
-        <h3>Dancers have been verified test:</h3>
-        
+        <h3>Dancers have been verified:</h3>
+      
 
-        <h3>dancer's total score test:</h3>
-       
+        <h3>dancer's total score:</h3>
+        {this.renderValues()}
       </div>
     );
   }
