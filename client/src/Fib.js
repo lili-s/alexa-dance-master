@@ -65,7 +65,7 @@ class Fib extends Component {
         </form>
 
         <h3>Dancers have been verified:</h3>
-       20
+        {this.renderSeenIndexes()}
 
         <h3>dancer's total score:</h3>
         {this.renderValues()}
