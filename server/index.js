@@ -51,12 +51,12 @@ app.get('/values/current', async (req, res) => {
   });
 });
 
-app.getDancerScoreById = (req, res) => {
+app.get('/values/id', async (req, res) => {
   const id = parseInt(req.params.id)
 
   const values = await pgClient.query('SELECT * FROM values WHERE id = $1', [id]);
   res.send(values.rows);
-}
+});
 app.post('/values', async (req, res) => {
   const index = req.body.index;
 
