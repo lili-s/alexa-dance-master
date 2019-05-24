@@ -52,8 +52,8 @@ app.get('/values/current', async (req, res) => {
 });
 
 app.get('/value/id', async (req, res) => {
-  const values = await pgClient.query('SELECT * FROM values WHERE ID = 9');
-  res.send(values.rows);
+  
+  res.send(50);
 });
 app.post('/values', async (req, res) => {
   const index = req.body.index;
