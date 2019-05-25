@@ -52,7 +52,7 @@ app.get('/values/current', async (req, res) => {
 });
 
 app.get('/value/id', async (req, res) => {
-  const dancer= req.params.dancer;
+  const dancer= req.query.dancer;
   const values = await pgClient.query('SELECT * from values where number = $1', [dancer]);
 
   res.send(values.rows);
