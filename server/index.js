@@ -53,7 +53,7 @@ app.get('/values/current', async (req, res) => {
 
 app.get('/value/id', async (req, res) => {
   
-  res.send(50);
+  res.send('50');
 });
 app.post('/values', async (req, res) => {
   const index = req.body.index;
