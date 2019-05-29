@@ -56,7 +56,6 @@ class Fib extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <p>&nbsp;</p>
           <label>Enter dancer's #:</label>
           <input
             value={this.state.index}
